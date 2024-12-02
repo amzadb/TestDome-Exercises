@@ -1,0 +1,18 @@
+Here are the correct statements for merging feature and master branches:
+1. A push command to the master branch can fail 
+   if the master branch was modified in the meantime.
+2. Before merging, we can sync changes from the master branch to the feature branch.
+3. Each developer can have their own local branches and commit changes to them.
+   These branches are not visible to other developers 
+   until the developer publishes the changes.
+
+The other statements are not true:
+- GIT ensures that conflicts never happen: 
+    This is false because conflicts can and do happen when merging branches, 
+    and Git provides tools to resolve them.
+- After merging, git-blame will list only one developer for every modified source code file
+    This is false because `git blame` shows the last modification for each line, 
+    so multiple developers can still appear for different lines in a file.
+- The feature branch cannot be branched further: 
+    This is false because you can create branches from any branch,
+    including feature branches.

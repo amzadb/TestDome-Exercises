@@ -1,0 +1,23 @@
+Question: 
+A student hosted the website for his college at http://mycollege.com. 
+Last weekend, while analyzing the logs, he found unauthorized logins to the admin panel
+of the website. He suspects that some other student within the same college network 
+was sniffing the data packots. 
+
+Using the __________ communication protocol to send data between the webrowser 
+and the web server would prevent this attack by casing a layer of security 
+on the data in transit.
+
+Answer: 
+The student can use **HTTPS (Hypertext Transfer Protocol Secure)** to secure 
+the communication between the web browser and the web server. 
+HTTPS encrypts the data in transit, preventing unauthorized parties from intercepting 
+or sniffing the packets. This encryption adds a layer of security that helps 
+protect sensitive information, such as login credentials, from being accessed by 
+unauthorized individuals within the same network.
+
+By implementing HTTPS, the data exchanged between the user's browser and the web server 
+is encrypted using TLS (Transport Layer Security), making it much more difficult 
+for attackers to intercept and read the data. This is a crucial step in securing a website, 
+especially in environments where network security might be compromised.
+ 

@@ -1,0 +1,32 @@
+An engine control unit (ECU) controls the operation of a car engine.
+It reads from the pedal sensor in order to detect how much throttle should be applied.
+
+The value of X-Throttle is an integer in the range 0 to 255.
+Based on the throttle value, the ECU send the fuel injection controller the amount of fuel
+that needs to be injected into the engine (Y-Fuel is an integer ranging between 0 to 765).
+
+Y-Fuel is calculated by the following procedure:
+If X-Throttle is less than or equal to 127, then Y-Fuel = X-THROTTLE * 2
+If X-Throttle is greater than 127, then Y-Fuel = X-THROTTLE + 130
+
+The ECU also reads the sensor that measures the tomperature of the engine.
+If the engine is still cool, previous rules are disregarced and the ECU just
+forwards three times the reading from the pedal sensor, ie., Y-Fuel = X-THROTTLE * 3.
+
+Write the optimal (effective and efficient) set of boundary test cases to test the fuel injection function.
+
+Answer:
+
+Throttle    Engine_Cool     Fuel
+0           Yes             0
+0           No              0
+127         Yes             381
+127         No              254
+128         Yes             384
+128         No              258
+255         Yes             765
+255         No              385
+100         Yes             300
+100         No              200
+200         Yes             600
+200         No              330

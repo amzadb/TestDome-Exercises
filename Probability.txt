@@ -1,0 +1,32 @@
+John and Mary are playing a game of dice.
+They each have a single six-sided dice. 
+Each time John rolls a 1,3, or 5, he scores a point. 
+Every time Mary rolls a 2, 4 or 6 she scores a point. 
+After rolls each, John has 3 points and Mary has 8 points. 
+If both players roll ten more times, what will their total scores be?
+
+Here's how to find John and Mary's total scores after 10 more rolls:
+
+1. **John's Potential Score:**
+    * John scores a point on a 1, 3, or 5.
+    * There are 3 favorable outcomes (1, 3, 5) out of 6 total possibilities on a die.
+    * Chance of scoring per roll: 3/6 = 1/2
+    * Over 10 rolls, we can estimate John's score by averaging the chance of scoring (1/2) with the chance of not scoring (1/2). 
+    * This gives us an average score of (1/2 + 1/2) / 2 = 1/2 per roll.
+    * Estimated additional score for John: 10 rolls * (1/2 score per roll) = 5 points
+
+2. **Mary's Potential Score:**
+    * Mary scores a point on a 2, 4, or 6.
+    * Similar to John, her chance of scoring per roll is also 1/2.
+    * Estimated additional score for Mary: 10 rolls * (1/2 score per roll) = 5 points
+
+3. **Total Scores:**
+    * John's current score + estimated additional score = 3 points + 5 points = 8 points
+    * Mary's current score + estimated additional score = 8 points + 5 points = 13 points
+
+**Important Note:**
+This calculation estimates the average score based on probability. 
+In reality, the actual score may vary depending on the specific rolls they get. 
+John could score much higher or lower than 5 additional points, and the same applies to Mary. 
+Therefore, based on the probabilities, John's estimated total score after 10 more rolls 
+would be 8 points, and Mary's estimated total score would be 13 points.

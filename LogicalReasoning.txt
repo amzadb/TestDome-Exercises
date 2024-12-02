@@ -1,0 +1,14 @@
+Ann claims that Mark hit her car on Wednesday evening, 
+while he was exiting a parking lot. 
+However, Mark's passport irrefutably show that he was abroad that week.
+Select which of the following statements are true:
+
+(Select all acceptable answers.)
+A. Mark might have had a car accident.
+B. Mark never had a car accident.
+C. Mark's car was in an accident.
+D. Mark may never have had a car accident.
+E. If Mark had been at the parking lot that Wednesday evening, then Ann's claim would be true.
+F. On Wednesday, Mark exited a parking lot.
+
+Correct answers: C, D, E
