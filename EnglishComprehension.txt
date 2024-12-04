@@ -3,3 +3,5 @@ Which of the following is a correct statement?
 a. Everyone will organize our sales and marketing for the upcoming team convention (TRUE)
 b. Sales team will organize our marketing and for the upcoming team convention (FALSE)
 c. Upcoming will organize the team convention for our sales, marketing and everyone (FALSE)
+d. Marketing will organize upcoming sales for the our team and everyone convention (FALSE)
+e. Will everyone for our marketing team organize the upcoming and sales convention? (FALSE)
