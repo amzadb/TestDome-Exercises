@@ -5,12 +5,22 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 
 const FocusableInput = (props) => {
-  // Write your code here
-  if (props.shouldFocus) {
-    return <input autoFocus />;
-  } else {
-    return <input />;
-  }
+  // Approach#1
+  // if (props.shouldFocus) {
+  //   return <input autoFocus />;
+  // } else {
+  //   return <input />;
+  // }
+
+  // Approach#2
+  const inputRef = React.useRef();
+  React.useEffect(()=> {
+    if(props.shouldFocus){
+      inputRef.current.focus()
+    }
+  }, []);  
+  return <input ref={inputRef} />;
+
 };
 
 document.body.innerHTML = "<div id='root'></div>";
