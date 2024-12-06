@@ -13,23 +13,23 @@ public class MergeNames {
     
     public static String[] uniqueNames(String[] names1, String[] names2) {
         // Approach#0
-        Set<String> set = new HashSet<String>();
+        // Set<String> set = new HashSet<String>();
         
-        for (String name: names1) {
-            set.add(name);    
-        }
+        // for (String name: names1) {
+        //    set.add(name);    
+        // }
         
-        for (String name: names2) {
-            set.add(name);    
-        }
+        // for (String name: names2) {
+        //    set.add(name);    
+        // }
         
-        String[] arr = new String[set.size()]; 
-        int index = 0;
-        for (String name: set) {
-            arr[index++] = name;
-        }
+        // String[] arr = new String[set.size()]; 
+        // int index = 0;
+        // for (String name: set) {
+        //    arr[index++] = name;
+        // }
         
-        return arr;
+        // return arr;
         
         // Approach#1
         // Set<String> set = new HashSet<String>(Arrays.asList(names1));
