@@ -1,4 +1,19 @@
 function minimalNumberOfPackages(items: number, availableLargePackages: number, availableSmallPackages: number): number {
+    // There could be space in a package, so we need to check 
+    // if there are enough packages to store the items
+
+    // When items = 13, availableLargePackages = 3, availableSmallPackages = 10
+    // The output should be 3, when 1 large package can store 5 items and 
+    // 1 small package can store 1 item
+
+    // When items = 22, availableLargePackages = 3, availableSmallPackages = 10
+    // The output should be 3, when 1 large package can store 5 items and
+    // 1 small package can store 1 item
+
+    // When items = 23, availableLargePackages = 3, availableSmallPackages = 3
+    // The output should be -1, when 1 large package can store 5 items and
+    // 1 small package can store 1 item
+
     const largePackageCapacity = 5;
     const smallPackageCapacity = 1;
 
