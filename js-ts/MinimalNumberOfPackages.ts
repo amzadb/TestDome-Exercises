@@ -1,79 +1,51 @@
-function minimalNumberOfPackages(items: number, availableLargePackages: number, availableSmallPackages: number) {
-    // There could be space in a package, so we need to check 
-    // if there are enough packages to store the items
+function minimalNumberOfPackages(items: number, availableLargePackages: number, availableSmallPackages: number): number {
+    const largePackageCapacity = 5;
+    const smallPackageCapacity = 1;
 
-    // When items = 13, availableLargePackages = 3, availableSmallPackages = 10
-    // The output should be 3, when 1 large package can store 5 items and 
-    // 1 small package can store 1 item
+    // Calculate the maximum items that can be packed with available packages
+    const maxItemsWithAvailablePackages = availableLargePackages * largePackageCapacity + availableSmallPackages * smallPackageCapacity;
 
-    // When items = 22, availableLargePackages = 3, availableSmallPackages = 10
-    // The output should be 3, when 1 large package can store 5 items and
-    // 1 small package can store 1 item
-
-    // When items = 23, availableLargePackages = 3, availableSmallPackages = 3
-    // The output should be -1, when 1 large package can store 5 items and
-    // 1 small package can store 1 item
-
-    let largePackage = 5;
-    let smallPackage = 1;
-
-    console.log("No. of items to pack: " + items);
-    
-    // Check if there are enough packages to store the items
-    if (items > availableLargePackages * largePackage + availableSmallPackages) {
-        console.log("availableLargePackages: " + availableLargePackages + " that can hold items: " + (availableLargePackages * largePackage));
-        console.log("availableSmallPackages: " + availableSmallPackages + " that can hold items: " + (availableSmallPackages * smallPackage));
+    // If there are not enough packages to store the items, return -1
+    if (items > maxItemsWithAvailablePackages) {
         return -1;
-    } else {
-        // Calculate the number of large packages needed
-        let largePackagesNeeded = Math.floor(items / largePackage);
-        console.log("largePackagesNeeded: ", largePackagesNeeded);
+    }
 
-        // Check if there are enough large packages available
-        if (largePackagesNeeded <= availableLargePackages) {
-            // Calculate the remaining items after using large packages
-            let remainingItems = items - largePackagesNeeded * largePackage;
-            console.log("remainingItems: ", remainingItems);
+    // Calculate the number of large packages needed
+    let largePackagesNeeded = Math.floor(items / largePackageCapacity);
+    let remainingItems = items % largePackageCapacity;
 
-            // If enough large packages, return the number of large packages needed
-            if (remainingItems === 0) {
-                return largePackagesNeeded;
-            } else {
-                // If there are remaining items, add 1 more large package
-                console.log("adding one more large package for the remaining items");
-                let totalPackages = largePackagesNeeded + 1;
-                console.log("totalPackages: ", totalPackages);
-                return totalPackages;
-            }
+    console.log("items: " + items);
+    console.log("availableLargePackages: " + availableLargePackages);
+    console.log("availableSmallPackages: " + availableSmallPackages);
+    console.log("largePackagesNeeded: " + largePackagesNeeded);
+
+    // If we have enough large packages to cover the items
+    if (largePackagesNeeded <= availableLargePackages) {   
+        console.log("remainingItems: " + remainingItems);
+        // If remaining items can be packed in one large package
+        if (remainingItems < largePackageCapacity) {
+            return largePackagesNeeded + 1;
+        }
+        // If remaining items can be packed with small packages
+        else if (remainingItems <= availableSmallPackages) {
+            return largePackagesNeeded + remainingItems;
         } else {
-            // Using all the available large packages
-            console.log("availableLargePackages: ", availableLargePackages); 
-            
-            // Calculate the remaining items after using all the available large packages
-            let remainingItems = (items - availableLargePackages * largePackage)
-            console.log("remainingItems: ", remainingItems);    
-            
-            if (remainingItems === 0) {
-                return availableLargePackages;
-            } else {
-                // Calculate the number of small packages needed
-                let smallPackagesNeeded = Math.ceil(remainingItems);
-                console.log("smallPackagesNeeded: ", smallPackagesNeeded);     
-                
-                // Check if there are enough small packages available
-                if (smallPackagesNeeded <= availableSmallPackages) {
-                    let totalPackages = availableLargePackages + smallPackagesNeeded;
-                    console.log("totalPackages: ", totalPackages);  
-                    return totalPackages;
-                } else {
-                    // If not enough small packages, return -1
-                    return -1;
-                }
-            }
+            return -1;
+        }
+    } else {
+        // Use all available large packages
+        remainingItems = items - availableLargePackages * largePackageCapacity;
+        console.log("remainingItems after filling the available large packages: " + remainingItems);
+        // If remaining items can be packed with small packages
+        if (remainingItems <= availableSmallPackages) {
+            return availableLargePackages + remainingItems;
+        } else {
+            return -1;
         }
     }
 }
-  
-console.log(minimalNumberOfPackages(22, 3, 10)); // Output: 10
-console.log(minimalNumberOfPackages(13, 3, 10)); // Output: 3
+
+// Test cases
+// console.log(minimalNumberOfPackages(22, 3, 10)); // Output: 10
+// console.log(minimalNumberOfPackages(13, 3, 10)); // Output: 3
 console.log(minimalNumberOfPackages(23, 3, 3)); // Output: -1
