@@ -11,10 +11,16 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 
 const Message = () => {  
+  const [visible, setVisible] = React.useState(false);
+  
+  function toggleVisibility() {
+    setVisible(prev => !prev)
+  }
+  
   return (
     <React.Fragment>
         <a href="#" onClick={toggleVisibility}>Want to buy a new car?</a>
-        {isVisible && <p>Call +11 22 33 44 now!</p>}
+        {visible && <p>Call +11 22 33 44 now!</p>}
     </React.Fragment>
   );
 }
