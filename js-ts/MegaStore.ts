@@ -4,7 +4,7 @@ enum DiscountType {
     Weight
 }
 
-function getDiscountPrice(cartWeight: number, totalPrice: number, discountType: string) {
+function getDiscountPrice(cartWeight: number, totalPrice: number, discountType: DiscountType): number {
     switch (discountType) {
         case DiscountType.Standard:
             return totalPrice - (totalPrice * 0.06);
