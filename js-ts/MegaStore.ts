@@ -1,8 +1,8 @@
-const DiscountTypes = {
-    Standard: "Standard",
-    Seasonal: "Seasonal",
-    Weight: "Weight"
-};
+enum DiscountType {
+    Standard,
+    Seasonal,
+    Weight
+}
 
 function getDiscountPrice(cartWeight: number, totalPrice: number, discountType: string) {
     switch (discountType) {
