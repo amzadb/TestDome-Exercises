@@ -14,9 +14,9 @@ function getPermissionList(permission: Permission): string[] {
 }
 
 enum Permission {
-    Read = 1,
-    Write = 2,
-    Execute = 4
+    Read = 1, // 1 (binary: 001)
+    Write = 2, // 2 (binary: 010)
+    Execute = 4 // 4 (binary: 100)
 }
 
 console.log(getPermissionList(Permission.Read | Permission.Write));
