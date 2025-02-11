@@ -7,7 +7,7 @@ function minimalNumberOfPackages(items: number, availableLargePackages: number, 
     // 1 small package can store 1 item
 
     // When items = 22, availableLargePackages = 3, availableSmallPackages = 10
-    // The output should be 3, when 1 large package can store 5 items and
+    // The output should be 10, when 1 large package can store 5 items and
     // 1 small package can store 1 item
 
     // When items = 23, availableLargePackages = 3, availableSmallPackages = 3
