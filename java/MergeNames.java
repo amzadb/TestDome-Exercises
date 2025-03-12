@@ -49,6 +49,12 @@ public class MergeNames {
         String[] arr = new String[set.size()]; 
         return set.toArray(arr);
         
+
+        // Approach#4
+        // return Stream.concat(Arrays.stream(names1), Arrays.stream(names2))
+        //        .collect(Collectors.groupingBy(s -> s, Collectors.counting()))       
+        //        .entrySet().stream().filter(m -> m.getValue() >= 1)       
+        //        .map(Map.Entry::getKey).toArray(String[]::new);
     }
     
     public static void main(String[] args) {
